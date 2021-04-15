@@ -10,21 +10,21 @@ Where the entries of the B matrix are sampled randomly from a Gaussian distribut
 The `scale` parameter determines the range of the frequencies that can be learned by the network, so it has to be manually chosen for each type of signal. Setting too high a value for `scale` causes high-frequency noise in the output and setting too low a value causes over-smoothed output [[2](#References)].
 
 ## Image SuperRes: 
-### [ImageSuperRes.ipynb](ImageSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1XfSUIKOCV7VvA3bilnO33lw_-Nx1j3Te?usp=sharing)
+### [ImageSuperRes.ipynb](https://nbviewer.jupyter.org/github/sanowar-raihan/fourier-feature-superresolution/blob/main/ImageSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1XfSUIKOCV7VvA3bilnO33lw_-Nx1j3Te?usp=sharing)
 
 It is the same as the “image regression” task in the paper. The network is trained on every other pixel, and at test time it is evaluated on all the pixels. So this is essentially a 2x spatial superresolution task.\
 Following the paper, `scale=10` value was chosen as a hyperparameter. 
 
 
 ## Audio SuperRes:
-### [AudioSuperRes.ipynb](AudioSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1mOdmm2l-KOCrAZEwE7k4ABGG0kGf_DNL?usp=sharing)
+### [AudioSuperRes.ipynb](https://nbviewer.jupyter.org/github/sanowar-raihan/fourier-feature-superresolution/blob/main/AudioSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1mOdmm2l-KOCrAZEwE7k4ABGG0kGf_DNL?usp=sharing)
 
 The network is trained on every other frame of a stereo audio, and at test time it is evaluated on all the frames. So it is essentially a 2x temporal superresolution task.\
 Since an audio signal contains many high-frequency contents, the `scale` parameter had to be set at a very high value. Here, `scale=5000` was manually chosen for a particular piano recording.
 
 
 ## Video SuperRes:
-### [VideoSuperRes.ipynb](VideoSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1SzDyh0XbIEVHj3NmWoAJUi-xN837DLBL?usp=sharing)
+### [VideoSuperRes.ipynb](https://nbviewer.jupyter.org/github/sanowar-raihan/fourier-feature-superresolution/blob/main/VideoSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1SzDyh0XbIEVHj3NmWoAJUi-xN837DLBL?usp=sharing)
 
 The network is trained on every other video frame and every other pixel of those frames. At test time it is evaluated on all the pixels in the video. So, it is essentially a 2x Spatio-temporal super-resolution task (increase the frame rate by 2x, also increase frame resolutions by 2x).\
 Here, `scale=5` was manually chosen for a particular test video.
