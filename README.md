@@ -15,19 +15,28 @@ The `scale` parameter determines the range of the frequencies that can be learne
 It is the same as the “image regression” task in the paper. The network is trained on every other pixel, and at test time it is evaluated on all the pixels. So this is essentially a 2x spatial superresolution task.\
 Following the paper, `scale=10` value was chosen as a hyperparameter. 
 
+| ![origimg](https://user-images.githubusercontent.com/71722137/115974559-7195bb80-a57f-11eb-8dba-119326d71ecb.jpg) | ![superimg](https://user-images.githubusercontent.com/71722137/115974569-840ff500-a57f-11eb-99e6-776c103ce84d.jpg) |
+|:---:|:---:|
+| **Input** | **2x super-resolution** |
+
 
 ## Audio SuperRes:
 ### [AudioSuperRes.ipynb](https://nbviewer.jupyter.org/github/sanowar-raihan/fourier-feature-superresolution/blob/main/AudioSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1mOdmm2l-KOCrAZEwE7k4ABGG0kGf_DNL?usp=sharing)
 
 The network is trained on every other frame of a stereo audio, and at test time it is evaluated on all the frames. So it is essentially a 2x temporal superresolution task.\
-Since an audio signal contains many high-frequency contents, the `scale` parameter had to be set at a very high value. Here, `scale=5000` was manually chosen for a particular piano recording.
+Since an audio signal contains many high-frequency contents, the `scale` parameter had to be set at a very high value. Here, `scale=5000` was manually chosen for a particular piano recording. **Checkout the colab link to listen to the audio result**.
 
 
 ## Video SuperRes:
 ### [VideoSuperRes.ipynb](https://nbviewer.jupyter.org/github/sanowar-raihan/fourier-feature-superresolution/blob/main/VideoSuperRes.ipynb) | [Google Colab](https://colab.research.google.com/drive/1SzDyh0XbIEVHj3NmWoAJUi-xN837DLBL?usp=sharing)
 
-The network is trained on every other video frame and every other pixel of those frames. At test time it is evaluated on all the pixels in the video. So, it is essentially a 2x Spatio-temporal super-resolution task (increase the frame rate by 2x, also increase frame resolutions by 2x).\
+The network is trained on every other video frame and every other pixel of those frames. At test time it is evaluated on all the pixels in the video. So, it is essentially a 2x Spatio-temporal super-resolution task (**increase the frame rate by 2x, also increase frame resolutions by 2x**).\
 Here, `scale=5` was manually chosen for a particular test video.
+
+| ![origvid](https://user-images.githubusercontent.com/71722137/115974661-fed91000-a57f-11eb-8770-c73cf02352d7.gif) | ![supervid](https://user-images.githubusercontent.com/71722137/115974667-0a2c3b80-a580-11eb-994f-3089802b2602.gif) |
+|:---:|:---:|
+| **Input** | **2x spatio-temporal super-resolution** |
+
 
 # References
 1. [On the Spectral Bias of Neural Networks](https://arxiv.org/abs/1806.08734), Rahaman et al. 2019
